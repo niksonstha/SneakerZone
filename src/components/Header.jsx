@@ -1,5 +1,6 @@
 import { Box, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import headerLogo from "../assets/headerLogo.png";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -11,7 +12,7 @@ function Header() {
       height={"4rem"}
       boxShadow="0 3px 10px rgba(0, 0, 0, 0.2)"
     >
-      <Box>
+      <Link to="/">
         <Image
           src={headerLogo}
           alt=""
@@ -19,14 +20,13 @@ function Header() {
           ml={"20px"}
           cursor={"pointer"}
         />
-      </Box>
+      </Link>
       <Box>
         <UnorderedList
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
           gap={10}
-          flex="1"
           letterSpacing={2}
           width={"100%"}
         >
@@ -82,9 +82,7 @@ function Header() {
       </Box>
       <Box mr={"20px"} cursor={"pointer"}>
         <Text fontSize={"0.8rem"}>Hello</Text>
-        <Text fontSize={"0.8rem"} width={"100%"}>
-          Guest
-        </Text>
+        <Text fontSize={"0.8rem"}>Guest</Text>
       </Box>
     </Box>
   );

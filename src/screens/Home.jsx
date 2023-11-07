@@ -1,11 +1,9 @@
-import Header from "../components/Header";
+import { Box } from "@chakra-ui/react";
 
 function Home() {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <Box>
+    
+  </Box>;
 }
 
 export default Home;
