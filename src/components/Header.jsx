@@ -64,17 +64,7 @@ function Header() {
           >
             <Link to="/">Home</Link>
           </ListItem>
-          <ListItem
-            padding="10px"
-            cursor="pointer"
-            transition="color 0.2s ease-in"
-            fontWeight={500}
-            _hover={{
-              color: "black",
-            }}
-          >
-            <Link to="/products">Products</Link>
-          </ListItem>
+
           <ListItem
             padding="10px"
             cursor="pointer"
