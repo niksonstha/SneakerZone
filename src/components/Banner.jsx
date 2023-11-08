@@ -7,6 +7,7 @@ function Banner() {
       backgroundImage={`url("https://cdn.shopify.com/s/files/1/0567/9503/7849/files/website-banner-desktop-landscape.jpg?v=1635135138")`}
       width="100%"
       height="70vh"
+      maxH={"70vh"}
       backgroundRepeat="no-repeat"
       backgroundPosition="center center center"
       backgroundSize="cover"
@@ -14,17 +15,18 @@ function Banner() {
       zIndex={-1}
       overflowY={"hidden"}
       opacity={"0.5"}
+      display={"flex"}
     >
       <Box
         style={{
           position: "absolute",
-          top: "91%",
+          top: "88%",
           width: "100%",
-          height: "3rem",
-          backgroundImage:
-            "linear-gradient(to bottom,transparent,rgba(79, 74, 69, 0.61), #4F4A45)",
+          height: "5rem",
+          maxHeight:'5rem',
+          backgroundImage: "linear-gradient(180deg,transparent,#4F4A45 80%)",
         }}
-      ></Box>
+      />
     </Box>
   );
 }
