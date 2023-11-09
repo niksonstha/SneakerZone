@@ -1,8 +1,9 @@
-import { Box, Image, ListItem, UnorderedList } from "@chakra-ui/react";
+import { Box, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import headerLogo from "../assets/headerLogo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
+import { MdShoppingBasket } from "react-icons/md";
 
 function Header() {
   const [scroll, setScroll] = useState("");
@@ -89,7 +90,20 @@ function Header() {
           </ListItem>
         </UnorderedList>
       </Box>
-      <Box mr="20px" cursor="pointer" display={"flex"} gap={5}>
+      <Box
+        mr="20px"
+        cursor="pointer"
+        display={"flex"}
+        gap={5}
+        alignItems={"center"}
+      >
+        <NavLink to={"/basket"}>
+          <Box display={"flex"} gap={1} alignItems={"center"}>
+            <MdShoppingBasket style={{ fontSize: "1.3rem" }} />
+            <Text fontSize={"10px"}>0</Text>
+          </Box>
+        </NavLink>
+
         <CgProfile style={{ fontSize: "1.3rem" }} />
       </Box>
     </Box>
