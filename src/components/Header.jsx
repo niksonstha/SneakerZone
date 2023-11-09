@@ -4,9 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { MdShoppingBasket } from "react-icons/md";
+import { useShoesContext } from "../store/context";
 
 function Header() {
   const [scroll, setScroll] = useState("");
+  const { shoes } = useShoesContext();
 
   const navbarColor = () => {
     if (window.scrollY > 100) {
@@ -100,7 +102,7 @@ function Header() {
         <NavLink to={"/basket"}>
           <Box display={"flex"} gap={1} alignItems={"center"}>
             <MdShoppingBasket style={{ fontSize: "1.3rem" }} />
-            <Text fontSize={"10px"}>0</Text>
+            <Text fontSize={"10px"}>{shoes.length}</Text>
           </Box>
         </NavLink>
 

@@ -1,10 +1,16 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { useShoesContext } from "../store/ShoeContext";
+import { useShoesContext } from "../store/context";
 
 // eslint-disable-next-line react/prop-types
 function Products({ id, name, price, image1 }) {
   const { addToCart } = useShoesContext();
+
+  const handleAddToCart = () => {
+    const shoe = { id, name, price, image1 };
+    addToCart(shoe);
+  };
+
   return (
     <Box
       display={"flex"}
@@ -35,7 +41,7 @@ function Products({ id, name, price, image1 }) {
           ${price}
         </Text>
 
-        <Button variant="solid" colorScheme="teal" onClick={addToCart}>
+        <Button variant="solid" colorScheme="teal" onClick={handleAddToCart}>
           Add to cart
         </Button>
       </Box>
