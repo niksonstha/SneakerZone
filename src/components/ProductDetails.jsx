@@ -5,7 +5,7 @@ import { nikeShoes } from "../db";
 function ProductDetails() {
   const { id } = useParams();
 
-  const product = nikeShoes.find((item) => item.id === JSON.parse(id));
+  const product = nikeShoes.find((item) => item.id === Number(id));
 
   return (
     <Box

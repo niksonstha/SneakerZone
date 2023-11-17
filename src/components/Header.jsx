@@ -102,7 +102,7 @@ function Header() {
         <NavLink to={"/basket"}>
           <Box display={"flex"} gap={1} alignItems={"center"}>
             <MdShoppingBasket style={{ fontSize: "1.3rem" }} />
-            <Text fontSize={"10px"}>{shoes.length}</Text>
+            <Text fontSize={"0.7rem"}>({shoes.length})</Text>
           </Box>
         </NavLink>
 

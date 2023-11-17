@@ -22,8 +22,8 @@ function Banner() {
           position: "absolute",
           top: "88%",
           width: "100%",
-          height: "5rem",
-          maxHeight:'5rem',
+          height: "7rem",
+          maxHeight:'7rem',
           backgroundImage: "linear-gradient(180deg,transparent,#4F4A45 80%)",
         }}
       />

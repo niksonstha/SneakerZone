@@ -10,7 +10,15 @@ import {
   NumberInputStepper,
   Text,
 } from "@chakra-ui/react";
-function BasketCard() {
+import { useState } from "react";
+
+// eslint-disable-next-line react/prop-types
+function BasketCard({ name, price, image }) {
+  const [quantity, setQuantity] = useState(1);
+
+  // Calculate total price based on quantity
+  const totalPrice = (quantity * price).toFixed(2);
+
   return (
     <Box display={"flex"} ml={"50px"}>
       <Box>
@@ -25,26 +33,18 @@ function BasketCard() {
           color={"black"}
         >
           <Image
-            src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/wzitsrb4oucx9jukxsmc/air-max-90-mens-shoes-6n3vKB.png"
+            src={image}
             width={"200px"}
-            height={"100%"}
-            objectFit={"cover"}
+            height={"200px"}
+            objectFit={"contain"}
             padding={5}
             alignSelf={"center"}
           />
           <Box mt={5}>
-            <Heading fontSize={30}>Jordan air 1</Heading>
-            <Text
-              textAlign={"justify"}
-              width={"90%"}
-              fontWeight={"semibold"}
-              mt={2}
-            >
-              The Nike Air Max 90 is a classic sneaker known for its comfort and
-              iconic design. It features a white and black colorway
-            </Text>
-            <Text fontSize="4xl" mt={2}>
-              Price: $9.99
+            <Heading fontSize={20}>{name}</Heading>
+
+            <Text fontSize="2xl" mt={2}>
+              Price: ${price}
             </Text>
 
             <HStack mt={2} mb={5}>
@@ -52,10 +52,13 @@ function BasketCard() {
               <NumberInput
                 size="sm"
                 maxW={16}
-                defaultValue={0}
+                value={quantity == 0 ? 1 : quantity} // Use controlled input
                 min={0}
                 max={20}
                 allowMouseWheel
+                onChange={(value) => {
+                  setQuantity(value);
+                }}
               >
                 <NumberInputField />
                 <NumberInputStepper>
@@ -64,6 +67,10 @@ function BasketCard() {
                 </NumberInputStepper>
               </NumberInput>
             </HStack>
+
+            <Text fontSize="2xl" mt={2}>
+              Total Price: ${totalPrice}
+            </Text>
           </Box>
         </Box>
       </Box>

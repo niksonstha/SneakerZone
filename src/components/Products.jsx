@@ -18,6 +18,7 @@ function Products({ id, name, price, image1 }) {
       _hover={{ transform: "scale(1.05)" }} // Apply the scale transform on hover
       transition="transform 0.3s ease" // Add a smooth transition effect
       cursor={"pointer"}
+      position={"relative"}
     >
       <Box
         bgColor={"#F6F1EE"}

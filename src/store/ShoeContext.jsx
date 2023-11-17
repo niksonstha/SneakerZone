@@ -4,6 +4,7 @@ import { MyContext } from "./context";
 // eslint-disable-next-line react/prop-types
 const ShoesContextProvider = ({ children }) => {
   const [shoes, setShoes] = useState([]);
+
   const addToCart = (shoe) => {
     setShoes([...shoes, shoe]);
   };
